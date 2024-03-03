@@ -43,11 +43,11 @@ export const selectScoresheetsResult = scoresheetsApiSlice.endpoints.getScoreshe
 
 const selectScoresheetsData = createSelector(
     selectScoresheetsResult,
-    scoresheetResult => selectScoresheetsResult.data
+    scoresheetResult => scoresheetResult.data
 )
 
 export const {
     selectAll: selectAllScoresheets,
     selectById: selectByScoresheetId,
-    selecetIds: selecetScoresheetIds
+    selectIds: selectScoresheetIds
 } = scoresheetsAdaptor.getSelectors(state => selectScoresheetsData(state) ?? initialState)

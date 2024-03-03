@@ -32,7 +32,7 @@ const DashFooter = () => {
         </footer>
     );
 
-  return content;
+    return content;
 }
 
 export default DashFooter;

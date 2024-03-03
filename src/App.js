@@ -6,7 +6,7 @@ import Login from "./features/auth/Login";
 import DashLayout from "./components/DashLayout";
 import Welcome from "./features/auth/welcome";
 import ScoreSheet from "./features/scoreSheet/ScoreSheet";
-import Users from "./features/users/Users";
+import UsersList from "./features/users/User";
 function App() {
 
   return (
@@ -21,7 +21,7 @@ function App() {
             <Route index element={<ScoreSheet />} />
           </Route>
           <Route path="users">
-            <Route index element={<Users />} />
+            <Route index element={<UsersList />} />
           </Route>
           
         </Route> {/* End Dash Route */}

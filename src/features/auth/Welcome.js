@@ -18,9 +18,9 @@ const Welcome = () => {
 
             <h1>Welcome!</h1>
 
-            <p><Link to="dash/record">User record</Link></p>
+            <p><Link to="dash/scoreSheet">User Score Sheet</Link></p>
 
-            <p><Link to="/dash/settings">User settings</Link></p>
+            <p><Link to="/dash/users">Users</Link></p>
         </section>
     );
 

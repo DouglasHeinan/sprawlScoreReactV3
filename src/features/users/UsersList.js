@@ -1,8 +1,8 @@
 import { useGetUsersQuery } from "./userApiSlice";
-import User from "./Users";
+import User from "./User";
 
 
-const Users = () => {
+const UsersList = () => {
 
   const {
     data: users,
@@ -17,9 +17,8 @@ const Users = () => {
     if (isLoading) content = <p>Loading...</p>
 
     if (isError) {
-        content = <p className={error ? "errmsg" : "offscreen"}>{error?.data?.message}</p>
+        content = <p className="errmsg">{error?.data?.message}</p>
     }
-
 
     if (isSuccess) {
 
@@ -49,6 +48,6 @@ const Users = () => {
 
 }
 
-// Flattened structure to grid?
+export default UsersList
 
-export default Users
+// Flattened structure to grid? 3:02:00
