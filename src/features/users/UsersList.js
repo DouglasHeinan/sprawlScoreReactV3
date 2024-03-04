@@ -1,4 +1,4 @@
-import { useGetUsersQuery } from "./userApiSlice";
+import { useGetUsersQuery } from "./usersApiSlice";
 import User from "./User";
 
 
@@ -27,6 +27,7 @@ const UsersList = () => {
         const tableContent = ids?.length
             ? ids.map(userId => <User key={userId} userId={userId} />)
             : null
+        console.log(tableContent)
 
         content = (
             <table className="table">
@@ -43,6 +44,8 @@ const UsersList = () => {
             </table>
         )
     }
+    console.log(content)
+
 
     return content
 

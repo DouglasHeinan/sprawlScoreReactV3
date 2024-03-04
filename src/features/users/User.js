@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 import { selectUserById } from "./usersApiSlice";
 
 const User = ({ userId }) => {
-  console.log(userId)
-
   const user = useSelector(state => selectUserById(state, userId));
 
   const navigate = useNavigate();
