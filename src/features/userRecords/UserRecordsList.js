@@ -1,16 +1,15 @@
-import { useGetUsersQuery } from "./usersApiSlice";
-import User from "./User";
+import { useGetRecordsQuery } from "./userRecordsApiSlice";
+import UserRecord from "./UserRecord";
 
-
-const UsersList = () => {
+const RecordsList = () => {
 
   const {
-    data: users,
+    data: records,
     isLoading,
     isSuccess,
     isError,
     error
-  } = useGetUsersQuery();
+  } = useGetRecordsQuery();
 
     let content;
 
@@ -22,19 +21,20 @@ const UsersList = () => {
 
     if (isSuccess) {
 
-        const { ids } = users;
+        const { ids } = records;
 
         const tableContent = ids?.length
-            ? ids.map(userId => <User key={userId} userId={userId} />)
+            ? ids.map(recordId => <UserRecord key={recordId} recordId={recordId} />)
             : null
+        console.log(tableContent)
 
         content = (
             <table className="table">
                 <thead className="table_thead">
                     <tr>
-                        <th scope="col" className="table_th user_username">Username</th>
-                        {/* <th scope="col" className="table_th user_roles">Roles</th> */}
-                        {/* <th scope="col" className="table_th user_edit">Edit</th> */}
+                        <th scope="col" className="table_th record_recordname">Recordname</th>
+                        {/* <th scope="col" className="table_th record_roles">Roles</th> */}
+                        {/* <th scope="col" className="table_th record_edit">Edit</th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +49,4 @@ const UsersList = () => {
 
 }
 
-export default UsersList
-
-// Flattened structure to grid? 3:02:00
+export default RecordsList

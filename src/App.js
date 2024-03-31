@@ -7,6 +7,11 @@ import DashLayout from "./components/DashLayout";
 import Welcome from "./features/auth/Welcome";
 import ScoreSheet from "./features/scoreSheet/ScoreSheet";
 import UsersList from "./features/users/UsersList";
+import UserRecordsList from "./features/userRecords/UserRecordsList";
+import AdminLayout from "./components/AdminLayout";
+import AdminWelcome from "./features/auth/AdminWelcome";
+
+
 function App() {
 
   return (
@@ -22,9 +27,16 @@ function App() {
           </Route>
           <Route path="users">
             <Route index element={<UsersList />} />
+            <Route path="records" element={<UserRecordsList />} />
           </Route>
           
         </Route> {/* End Dash Route */}
+        <Route path="admin" element={<AdminLayout />}>
+          <Route index element={<AdminWelcome />} />
+          <Route path="users">
+            <Route index element={<UsersList />} />
+          </Route>
+        </Route> {/* End Admin Route */}
       </Route>
     </Routes>
   );

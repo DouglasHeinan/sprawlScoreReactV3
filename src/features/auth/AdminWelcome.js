@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 
-const Welcome = () => {
+const AdminWelcome = () => {
     const date = new Date()
     const today = new Intl.DateTimeFormat(
         "en-US", {
@@ -16,15 +16,15 @@ const Welcome = () => {
 
             <p>{today}</p>
 
-            <h1>Welcome!</h1>
+            <h1>Welcome Admin!</h1>
 
-            <p><Link to="/dash/scoreSheet">User Score Sheet</Link></p>
+            <p><Link to="/admin/users">All Users</Link></p>
 
-            <p><Link to="/dash/users">Users</Link></p>
+            {/* <p><Link to="/dash/users">Users</Link></p> */}
         </section>
     );
 
     return content;
 }
 
-export default Welcome
+export default AdminWelcome
